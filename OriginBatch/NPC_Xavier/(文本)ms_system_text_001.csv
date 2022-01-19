@@ -1,0 +1,6 @@
+﻿id(区分不同对话）,说话者,中文-1,对话内容,中文-1,对话持续速率（字/s),保护时间系数,预设动画id,开始时间
+全部,文本,文本,全部,全部,文本,文本,文本,文本
+both,both,both,both,both,both,both,both,both
+id,speaker,speakertext,dialog,dialogtext,speed,protecttime,anime,start
+int,string,string,string,string,int,int,string,float
+1,MS_Name_NPC_Xavier,泽维尔,MS_NPC_Xavire_Text_001,怎么样，要现在出发吗？,50,15,,0

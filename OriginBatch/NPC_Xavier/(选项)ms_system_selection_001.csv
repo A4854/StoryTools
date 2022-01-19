@@ -1,0 +1,7 @@
+﻿id(区分不同对话）,对话内容,中文-1,倒计时（秒）
+全部,全部,全部,选项
+both,both,both,both
+id,dialog,dialogtext,count
+int,string,string,int
+1,MS_NPC_Xavire_Selection_001,Let's GO,0
+2,MS_NPC_Xavire_Selection_002,再给我一首歌的时间,0

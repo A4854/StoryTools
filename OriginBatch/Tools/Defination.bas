@@ -1,0 +1,5 @@
+Attribute VB_Name = "Defination"
+Public Const UNIX_DATE As Date = "1970-01-01 08:00:00"
+Public Const TITLE_ARRAY As String = "#map,id,int"
+Public Const TITLE_ARRAY_NAME As String = "id"
+Public Const TITLE_MATCH_RANGE as String = "A1:A10"
