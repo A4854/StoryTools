@@ -3,7 +3,6 @@ D:\my_project\StoryTools\StoryTools\bin\Debug\StoryTools.pdb
 D:\my_project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.manifest
 D:\my_project\StoryTools\StoryTools\bin\Debug\StoryTools.vsto
 D:\my_project\StoryTools\StoryTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
-D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.AssemblyReference.cache
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.Properties.Resources.resources
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.GenerateResource.cache
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CoreCompileInputs.cache
@@ -11,3 +10,4 @@ D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CopyComplete
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.StoryToolsFunctions.resources
+D:\my_project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.config

@@ -9,16 +9,22 @@ namespace StoryTools
 {
     public partial class StoryToolsFunctions
     {
-        private Application excelApp = null;
+        Application app;
         private void StoryToolsFunctions_Load(object sender, RibbonUIEventArgs e)
         {
-            excelApp = Globals.ThisAddIn.Application;
+            app = Globals.ThisAddIn.Application;
         }
 
-        private void ButtonGo_Click(object sender, RibbonControlEventArgs e)
+        private void button1_Click(object sender, RibbonControlEventArgs e)
         {
-            Range selction = excelApp.ActiveCell;
-            selction.Value = "Go";
+
+        }
+
+        private void ButtonExportToCSV_Click(object sender, RibbonControlEventArgs e)
+        {
+            Worksheet sheet = app.ActiveWorkbook.Worksheets[1];
+            ExcelToCsv.ExportToCsv(sheet.UsedRange,"", sheet.UsedRange.Rows.Count, "dialog", "dialogtext");
+            
         }
     }
 }
