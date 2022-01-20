@@ -34,20 +34,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TabTest = this.Factory.CreateRibbonTab();
+            this.ExcelTools = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.ButtonExportToCSV = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
-            this.TabTest.SuspendLayout();
+            this.ExcelTools.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TabTest
+            // ExcelTools
             // 
-            this.TabTest.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.TabTest.Groups.Add(this.group1);
-            this.TabTest.Label = "TabTest";
-            this.TabTest.Name = "TabTest";
+            this.ExcelTools.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+            this.ExcelTools.Groups.Add(this.group1);
+            this.ExcelTools.Label = "ExcelTools";
+            this.ExcelTools.Name = "ExcelTools";
             // 
             // group1
             // 
@@ -73,10 +73,10 @@
             // 
             this.Name = "StoryToolsFunctions";
             this.RibbonType = "Microsoft.Excel.Workbook";
-            this.Tabs.Add(this.TabTest);
+            this.Tabs.Add(this.ExcelTools);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.StoryToolsFunctions_Load);
-            this.TabTest.ResumeLayout(false);
-            this.TabTest.PerformLayout();
+            this.ExcelTools.ResumeLayout(false);
+            this.ExcelTools.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
             this.ResumeLayout(false);
@@ -85,7 +85,7 @@
 
         #endregion
 
-        internal Microsoft.Office.Tools.Ribbon.RibbonTab TabTest;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab ExcelTools;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonExportToCSV;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
