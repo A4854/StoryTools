@@ -42,7 +42,7 @@ namespace StoryTools
                 }
                 dataTable.Rows.Add(dataRow);
             }
-            Utils.SaveCSV(dataTable, @"D:\doc\策划文档\系统文档\#功能文档\E_ELF\3.0\go.csv");
+            Utils.SaveCSV(dataTable, path);
 
         }
     }

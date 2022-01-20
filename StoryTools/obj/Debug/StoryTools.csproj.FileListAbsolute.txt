@@ -11,3 +11,17 @@ D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.StoryToolsFunctions.resources
 D:\my_project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.config
+F:\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.config
+F:\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll
+F:\Project\StoryTools\StoryTools\bin\Debug\StoryTools.pdb
+F:\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.manifest
+F:\Project\StoryTools\StoryTools\bin\Debug\StoryTools.vsto
+F:\Project\StoryTools\StoryTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.Properties.Resources.resources
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.StoryToolsFunctions.resources
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.GenerateResource.cache
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CoreCompileInputs.cache
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CopyComplete
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb
+F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.AssemblyReference.cache

@@ -83,12 +83,27 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="PresentationCore" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="PresentationFramework" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Configuration" version="4.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -118,12 +133,22 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="System.Xaml" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System.Xml" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="System.Xml.Linq" version="4.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="WindowsBase" version="4.0.0.0" publicKeyToken="31BF3856AD364E35" language="neutral" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -139,24 +164,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="StoryTools.dll" size="19456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="StoryTools.dll" size="21504">
       <assemblyIdentity name="StoryTools" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FcGlQz+/IYVbUFlZQWbCQ210Imn4cZzUztAJX2pp3n4=</dsig:DigestValue>
+        <dsig:DigestValue>WvOYEspXxTJoWKCOmPgiYD+uUlApp98CfxXfh6LbbI4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="StoryTools.dll.config" size="202">
+  <file name="StoryTools.dll.config" size="268">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4tBxbYbWcOodNscsmc1JtUeToSFN/tX5JqVf5M0SN1k=</dsig:DigestValue>
+      <dsig:DigestValue>huTmh/Fj9qQqLsu2HwwkX5Sdwqg/PTQdVkfVwTJfyOY=</dsig:DigestValue>
     </hash>
   </file>
   <vstav3:addIn xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">
@@ -184,4 +209,4 @@
       </vstov4:customizations>
     </vstav3:application>
   </vstav3:addIn>
-<publisherIdentity name="CN=DESKTOP-U4A9H4V\qi.li" issuerKeyHash="72fcc3756942b1b783a263a76f29d358bed8b595" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vvwl6h+f0Xd/6xa9k4WExjkSxOcro749lk32UaSnLAI=</DigestValue></Reference></SignedInfo><SignatureValue>HlZS1X8k8GgT97sJ88PpzHSCb2S9mUbXZVBPDvxuh+2gni/Yi8weC0yb6O27Vwk7yLs8XJ9AIQus5rzqyiP5C7I8oIum/yAWxz/6+2lh2fG4Yr0narb9Fhj0LYk1KAcu6pudZ8MlGqyvO8yREleLDg/uAZUiGvqGIbPLH9rBm0I=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0spPW50deOG7oQS/Ksm1MTX+5CYlXPoCbhPkSRcio3ySQqOhm53KsVMNXMSce5SWqZsGUb0W2TakNyY8qQnukO6WuJyMRpXoAIgu7NKAB+MeyIFcszX18uk6T4u2WWb9H0dOHNgaKN4ngONlbXJDLkFIMuyl3CYcku2ErXyMfpU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="022ca7a451f64d963dbea32be7c41239c6848593bd16eb7f77d19f1fea25fcbe" Description="" Url=""><as:assemblyIdentity name="StoryTools.dll" version="1.0.0.1" publicKeyToken="0eab3141daf47539" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-U4A9H4V\qi.li</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ZFa/u3uDEY3wSorJoFiAOMkU9ZvLEol3/Rr5wMOsizo=</DigestValue></Reference></SignedInfo><SignatureValue>KiT1+bljzWFESgu0UGL5xpLm6yrtxzmx9LxPPXwQLq55xmDdB1dwUV5MzvdBmeCI70MIPlT4tzT7cYy3KcPOtVAU6Xw+tdosoSy4uniS5g2ku9nwoJO/Gkt2d4aipLOPtGw2DW47kLhVInKU7KF021q55q6s9nMPxlQQUq6L7y0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0spPW50deOG7oQS/Ksm1MTX+5CYlXPoCbhPkSRcio3ySQqOhm53KsVMNXMSce5SWqZsGUb0W2TakNyY8qQnukO6WuJyMRpXoAIgu7NKAB+MeyIFcszX18uk6T4u2WWb9H0dOHNgaKN4ngONlbXJDLkFIMuyl3CYcku2ErXyMfpU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQZVTKAOqyH5xJXCdkk+kKnTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFUANABBADkASAA0AFYAXABxAGkALgBsAGkwHhcNMjIwMTE5MDYxMzE5WhcNMjMwMTE5MTIxMzE5WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFUANABBADkASAA0AFYAXABxAGkALgBsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANLKT1udHXjhu6EEvyrJtTE1/uQmJVz6Am4T5EkXIqN8kkKjoZudyrFTDVzEnHuUlqmbBlG9Ftk2pDcmPKkJ7pDulricjEaV6ACILuzSgAfjHsiBXLM19fLpOk+Ltllm/R9HThzYGijeJ4DjZW1yQy5BSDLspdwmHJLthK18jH6VAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAiJeA7A11nOn9l29WHD4IJWVkIWunaLZdufxm43g4RubOpSn4vequC+WuJrQsYQ83WHtQmEdPqfA1SY6uL0VdJ7pPbpZMEB+3CJCW8tZTe0SqcSO9YYD4FyZvY+v91oSdS0PsywQV2SDAixkyq0BX9y38uRlytx6z76x3GtFRMpA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=DESKTOP-U4A9H4V\qi.li" issuerKeyHash="72fcc3756942b1b783a263a76f29d358bed8b595" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>08bn95nR3dW4SQOokUH6WQse/jqG441pHYUDpW10jhI=</DigestValue></Reference></SignedInfo><SignatureValue>I5IXFNtVMm6P5pk9f4hQ5rB/bAvRFLRNb8Y1YsSAHLw11ayi62pfEXvpxDW7OcSnW9DnLaS5xZwDGWzcvPE1AlwvFzjdhOTJCQyQYUHq+ihFlgRo2BX/q1k1pW6Ez4mcwxjK/YRDMWU+OBQAlLMXBz9FA3YqweHiUuifE98lCfw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0spPW50deOG7oQS/Ksm1MTX+5CYlXPoCbhPkSRcio3ySQqOhm53KsVMNXMSce5SWqZsGUb0W2TakNyY8qQnukO6WuJyMRpXoAIgu7NKAB+MeyIFcszX18uk6T4u2WWb9H0dOHNgaKN4ngONlbXJDLkFIMuyl3CYcku2ErXyMfpU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="128e746da503851d698de3863afe1e0b59fa4191a80349b8d5ddd199f7e7c6d3" Description="" Url=""><as:assemblyIdentity name="StoryTools.dll" version="1.0.0.1" publicKeyToken="0eab3141daf47539" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-U4A9H4V\qi.li</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>tv8KA/5khbdsdQOGEQqMO8aR5zzhKuCNAwyN9UKgnM0=</DigestValue></Reference></SignedInfo><SignatureValue>T26BOkc3juR6yaf2Bc2pvNEBao2161vjcjLQEdJU57j5e1AvXGwPvEXKmW7OVI/kncBBGXqtZV9OCpcvWziZYkseLKTmGeVXiybK9/rUiYvvAY1JYsPAv/NEGBzEGmXLhPC+8ZyBt1j+xcCeQOXS8qcvJzAruZG0w2wciMDL0lQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0spPW50deOG7oQS/Ksm1MTX+5CYlXPoCbhPkSRcio3ySQqOhm53KsVMNXMSce5SWqZsGUb0W2TakNyY8qQnukO6WuJyMRpXoAIgu7NKAB+MeyIFcszX18uk6T4u2WWb9H0dOHNgaKN4ngONlbXJDLkFIMuyl3CYcku2ErXyMfpU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQZVTKAOqyH5xJXCdkk+kKnTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFUANABBADkASAA0AFYAXABxAGkALgBsAGkwHhcNMjIwMTE5MDYxMzE5WhcNMjMwMTE5MTIxMzE5WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFUANABBADkASAA0AFYAXABxAGkALgBsAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANLKT1udHXjhu6EEvyrJtTE1/uQmJVz6Am4T5EkXIqN8kkKjoZudyrFTDVzEnHuUlqmbBlG9Ftk2pDcmPKkJ7pDulricjEaV6ACILuzSgAfjHsiBXLM19fLpOk+Ltllm/R9HThzYGijeJ4DjZW1yQy5BSDLspdwmHJLthK18jH6VAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAiJeA7A11nOn9l29WHD4IJWVkIWunaLZdufxm43g4RubOpSn4vequC+WuJrQsYQ83WHtQmEdPqfA1SY6uL0VdJ7pPbpZMEB+3CJCW8tZTe0SqcSO9YYD4FyZvY+v91oSdS0PsywQV2SDAixkyq0BX9y38uRlytx6z76x3GtFRMpA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
