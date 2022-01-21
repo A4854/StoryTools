@@ -27,6 +27,7 @@ namespace StoryTools.Configuration
             UserConfigSettings userConfig = config.GetSection("UserConfigSettings") as UserConfigSettings;
             userConfig.UserLocalizationPath = value;
             config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("UserConfigSettings");
         }
 
         [ConfigurationProperty(UserConfigConstants.UserLocalizationPathKey, IsKey = true, IsRequired = true)]

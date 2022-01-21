@@ -1,0 +1,14 @@
+D:\my_project\StoryTools\StoryTools\bin\Release\StoryTools.dll.config
+D:\my_project\StoryTools\StoryTools\bin\Release\StoryTools.dll
+D:\my_project\StoryTools\StoryTools\bin\Release\StoryTools.pdb
+D:\my_project\StoryTools\StoryTools\bin\Release\StoryTools.dll.manifest
+D:\my_project\StoryTools\StoryTools\bin\Release\StoryTools.vsto
+D:\my_project\StoryTools\StoryTools\bin\Release\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.csproj.AssemblyReference.cache
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.Properties.Resources.resources
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.StoryToolsFunctions.resources
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.csproj.GenerateResource.cache
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.csproj.CoreCompileInputs.cache
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.csproj.CopyComplete
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.dll
+D:\my_project\StoryTools\StoryTools\obj\Release\StoryTools.pdb

@@ -25,3 +25,4 @@ F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CopyComplete
 F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
 F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb
 F:\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.AssemblyReference.cache
+D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.AssemblyReference.cache
