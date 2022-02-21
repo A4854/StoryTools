@@ -16,6 +16,13 @@ namespace StoryTools
         private void StoryToolsFunctions_Load(object sender, RibbonUIEventArgs e)
         {
             app = Globals.ThisAddIn.Application;
+            app.WorkbookActivate += App_WorkbookActivate;         
+        }
+
+        private void App_WorkbookActivate(Excel.Workbook Wb)
+        {
+            StyleManager.AddStyle(app, "LogContent", "宋体", 14, false, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
+            StyleManager.AddStyle(app, "LogTitle", "宋体", 16, true, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
         }
 
         private void button1_Click(object sender, RibbonControlEventArgs e)
@@ -57,5 +64,22 @@ namespace StoryTools
         {
 
         }
+
+        private void MakeLog_Click(object sender, RibbonControlEventArgs e)
+        {
+            if (app.ActiveWorkbook.Worksheets.OfType<Excel.Worksheet>().FirstOrDefault(ws => ws.Name == "log") == null)
+            {
+                var logSheet = app.ActiveWorkbook.Worksheets.Add() as Excel._Worksheet;
+                logSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
+                logSheet.Name = "log";
+                logSheet.Columns.ColumnWidth = 30;
+                logSheet.Rows.RowHeight = 18.75;
+
+                RangeManager.InitRange(app, logSheet.Range["A1", "C1"], "LogTitle", "日期", "修改人", "修改内容");
+                RangeManager.InitRange(app, logSheet.Range["A2", "C2"], "LogContent", DateTime.Today.ToShortDateString(), "黎　奇", "");
+                RangeManager.InitRange(app, logSheet.Range["A3", "C10"], "LogContent", null);
+            }
+        }
+
     }
 }

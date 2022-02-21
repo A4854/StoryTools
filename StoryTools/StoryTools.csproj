@@ -188,6 +188,7 @@
     <Compile Include="Config\UserConfigSettings.cs" />
     <Compile Include="ExcelToCsv.cs" />
     <Compile Include="Defination.cs" />
+    <Compile Include="RangeManager.cs" />
     <Compile Include="StoryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -198,6 +199,7 @@
     <Compile Include="StoryToolsFunctions.Designer.cs">
       <DependentUpon>StoryToolsFunctions.cs</DependentUpon>
     </Compile>
+    <Compile Include="StyleManager.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

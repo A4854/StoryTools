@@ -39,6 +39,7 @@
             this.ButtonExportToCSV = this.Factory.CreateRibbonButton();
             this.button1 = this.Factory.CreateRibbonButton();
             this.ButtonConfigManager = this.Factory.CreateRibbonButton();
+            this.ButtonMakeLog = this.Factory.CreateRibbonButton();
             this.ConfigManagerWindow = new System.Windows.Forms.FolderBrowserDialog();
             this.ExcelTools.SuspendLayout();
             this.group1.SuspendLayout();
@@ -56,6 +57,7 @@
             this.group1.Items.Add(this.ButtonExportToCSV);
             this.group1.Items.Add(this.button1);
             this.group1.Items.Add(this.ButtonConfigManager);
+            this.group1.Items.Add(this.ButtonMakeLog);
             this.group1.Label = "StoryTools";
             this.group1.Name = "group1";
             // 
@@ -77,6 +79,12 @@
             this.ButtonConfigManager.Label = "ConfigManager";
             this.ButtonConfigManager.Name = "ButtonConfigManager";
             this.ButtonConfigManager.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonConfigManager_Click);
+            // 
+            // ButtonMakeLog
+            // 
+            this.ButtonMakeLog.Label = "MakeLog";
+            this.ButtonMakeLog.Name = "ButtonMakeLog";
+            this.ButtonMakeLog.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.MakeLog_Click);
             // 
             // ConfigManagerWindow
             // 
@@ -104,6 +112,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         private System.Windows.Forms.FolderBrowserDialog ConfigManagerWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonConfigManager;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonMakeLog;
     }
 
     partial class ThisRibbonCollection
