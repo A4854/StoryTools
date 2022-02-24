@@ -189,6 +189,10 @@
     <Compile Include="ExcelToCsv.cs" />
     <Compile Include="Defination.cs" />
     <Compile Include="RangeManager.cs" />
+    <Compile Include="Scripts\DocumentLog\DocumentLogInfo.cs" />
+    <Compile Include="Scripts\DocumentLog\DocumentLogManager.cs" />
+    <Compile Include="Scripts\Tips\Tip.cs" />
+    <Compile Include="Scripts\Tips\TipsManager.cs" />
     <Compile Include="StoryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -235,6 +239,9 @@
       <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
     </Compile>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Style\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
