@@ -42,6 +42,7 @@ namespace StoryTools
                 }
                 dataTable.Rows.Add(dataRow);
             }
+            dataTable.Rows.RemoveAt(0);
             Utils.SaveCSV(dataTable, path);
 
         }

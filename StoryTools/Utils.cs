@@ -24,7 +24,7 @@ namespace StoryTools
             // create a new string array
             string[] arr = new string[values.Length];
             // loop through the 2-D System.Array and populate the 1-D String Array
-            for (int i = 1; i < values.Length; i++)
+            for (int i = 1; i <= values.Length; i++)
             {
                 if (values.GetValue(1, i) == null)
                     arr[i - 1] = "";

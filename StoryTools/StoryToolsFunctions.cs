@@ -33,6 +33,8 @@ namespace StoryTools
         private void ButtonExportToCSV_Click(object sender, RibbonControlEventArgs e)
         {
             string CSVDirectory = Configuration.UserConfigSettings.GetConfig().UserLocalizationPath;
+            //string CSVDirectory = @"C:\Users\qi.li\Desktop\";
+
             if (CSVDirectory == "")
             {
                 WindowsForm.FolderBrowserDialog dialog = new WindowsForm.FolderBrowserDialog();
@@ -51,8 +53,7 @@ namespace StoryTools
             string fileType = ".csv";
             string fullPath = Path.Combine(CSVDirectory, csvName + fileType);
             Excel.Worksheet sheet = app.ActiveWorkbook.Worksheets[1];
-            ExcelToCsv.ExportToCsv(sheet.UsedRange, fullPath, sheet.UsedRange.Rows.Count, "dialog", "dialogtext");
-            
+            ExcelToCsv.ExportToCsv(sheet.UsedRange, fullPath, sheet.UsedRange.Rows.Count, "key", "zh_cn");
         }
 
         private void ButtonConfigManager_Click(object sender, RibbonControlEventArgs e)
