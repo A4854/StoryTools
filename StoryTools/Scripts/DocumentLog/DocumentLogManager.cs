@@ -1,11 +1,13 @@
 ﻿using System;
+using Excel = Microsoft.Office.Interop.Excel;
+using StoryTools.Scripts.ExcelHelper;
 
 namespace StoryTools.Scripts.DocumentLog
 {
-    internal class DocumentLogManager
+    internal static class DocumentLogManager
     {
 
-        private void UpdateLog()
+        private static void UpdateLog()
         {
             if (!GetLogs())
             {
@@ -15,12 +17,12 @@ namespace StoryTools.Scripts.DocumentLog
             return;
         }
 
-        private bool GetLogs()
+        private static bool GetLogs()
         {
             return true;
         }
 
-        private void AppendLog(DateTime logDate, string logBlame, string[] logContent = null)
+        private static void AppendLog(DateTime logDate, string logBlame, string[] logContent = null)
         {
             DocumentLogInfo documentLogInfo = new DocumentLogInfo();
             documentLogInfo.LogDate = logDate;
@@ -28,7 +30,20 @@ namespace StoryTools.Scripts.DocumentLog
             documentLogInfo.LogContent = logContent;
         }
 
-        private void MakeLogSheet()
+        public static void MakeLog(Excel.Workbook workbook)
+        {
+            var logSheet = workbook.Worksheets.Add() as Excel._Worksheet;
+            logSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
+            logSheet.Name = "log";
+            logSheet.Columns.ColumnWidth = 30;
+            logSheet.Rows.RowHeight = 18.75;
+
+            RangeManager.InitRange(workbook, logSheet.Range["A1", "C1"], "LogTitle", "日期", "修改人", "修改内容");
+            RangeManager.InitRange(workbook, logSheet.Range["A2", "C2"], "LogContent", DateTime.Today.ToShortDateString(), "黎　奇", "");
+            RangeManager.InitRange(workbook, logSheet.Range["A3", "C10"], "LogContent", null);
+        }
+
+        private static void MakeLogSheet()
         {
             //todo
             return;

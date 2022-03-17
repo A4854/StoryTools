@@ -37,7 +37,7 @@
             this.ExcelTools = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.ButtonExportToCSV = this.Factory.CreateRibbonButton();
-            this.button1 = this.Factory.CreateRibbonButton();
+            this.ButtonCheckRoleName = this.Factory.CreateRibbonButton();
             this.ButtonConfigManager = this.Factory.CreateRibbonButton();
             this.ButtonUpdateLog = this.Factory.CreateRibbonButton();
             this.ConfigManagerWindow = new System.Windows.Forms.FolderBrowserDialog();
@@ -55,7 +55,7 @@
             // group1
             // 
             this.group1.Items.Add(this.ButtonExportToCSV);
-            this.group1.Items.Add(this.button1);
+            this.group1.Items.Add(this.ButtonCheckRoleName);
             this.group1.Items.Add(this.ButtonConfigManager);
             this.group1.Items.Add(this.ButtonUpdateLog);
             this.group1.Label = "StoryTools";
@@ -67,12 +67,11 @@
             this.ButtonExportToCSV.Name = "ButtonExportToCSV";
             this.ButtonExportToCSV.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonExportToCSV_Click);
             // 
-            // button1
+            // ButtonCheckRoleName
             // 
-            this.button1.Enabled = false;
-            this.button1.Label = "CheckRoleName";
-            this.button1.Name = "button1";
-            this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button1_Click);
+            this.ButtonCheckRoleName.Label = "CheckRoleName";
+            this.ButtonCheckRoleName.Name = "ButtonCheckRoleName";
+            this.ButtonCheckRoleName.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.CheckRoleName_Click);
             // 
             // ButtonConfigManager
             // 
@@ -96,7 +95,7 @@
             this.Name = "StoryToolsFunctions";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.ExcelTools);
-            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.StoryToolsFunctions_Load);
+            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.OnStoryToolsLoad);
             this.ExcelTools.ResumeLayout(false);
             this.ExcelTools.PerformLayout();
             this.group1.ResumeLayout(false);
@@ -110,7 +109,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab ExcelTools;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonExportToCSV;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonCheckRoleName;
         private System.Windows.Forms.FolderBrowserDialog ConfigManagerWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonConfigManager;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonUpdateLog;

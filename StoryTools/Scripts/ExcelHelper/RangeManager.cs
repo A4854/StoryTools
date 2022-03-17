@@ -4,10 +4,10 @@ namespace StoryTools.Scripts.ExcelHelper
 {
     internal static class RangeManager
     {
-        public static void InitRange(Excel.Application app, Excel.Range rng, string styleName, params string[] args)
+        public static void InitRange(Excel.Workbook workbook, Excel.Range rng, string styleName, params string[] args)
         {
             Excel.Range tableContentRange = rng;
-            tableContentRange.Style = app.ActiveWorkbook.Styles[styleName];
+            tableContentRange.Style = workbook.Styles[styleName];
             tableContentRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
             tableContentRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
             if (args != null)
