@@ -1,38 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Data;
+﻿using System.Data;
 using System.IO;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq;
 
-namespace StoryTools
+namespace StoryTools.Scripts.CsvHelper
 {
-    public static class Utils
+    internal class CsvManger
     {
-        public static int GetColumnID(IEnumerable<string>stringList, string targetName)
-        {
-            int ret = 0;
-            if (stringList.Contains(targetName))
-            {
-                ret = stringList.TakeWhile(i => i != targetName).Count();
-            }
-            return ret;
-        }
-        public static string[] ConvertToStringArray(Array values)
-        {
-            // create a new string array
-            string[] arr = new string[values.Length];
-            // loop through the 2-D System.Array and populate the 1-D String Array
-            for (int i = 1; i <= values.Length; i++)
-            {
-                if (values.GetValue(1, i) == null)
-                    arr[i - 1] = "";
-                else
-                    arr[i - 1] = values.GetValue(1, i).ToString();
-            }
-            return arr;
-        }
         public static void SaveCSV(DataTable dt, string fullPath)
         {
             FileInfo fi = new FileInfo(fullPath);

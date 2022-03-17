@@ -1,12 +1,12 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
+using StoryTools.Scripts.ExcelHelper;
+using StoryTools.Scripts.StyleHelper;
+using System;
+using System.IO;
+using System.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using WindowsForm = System.Windows.Forms;
-using System.Configuration;
-using System.IO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using StoryTools.Configuration;
 
 namespace StoryTools
 {
@@ -16,13 +16,13 @@ namespace StoryTools
         private void StoryToolsFunctions_Load(object sender, RibbonUIEventArgs e)
         {
             app = Globals.ThisAddIn.Application;
-            app.WorkbookActivate += App_WorkbookActivate;         
+            app.WorkbookActivate += App_WorkbookActivate;
         }
 
         private void App_WorkbookActivate(Excel.Workbook Wb)
         {
-            StyleManager.AddStyle(app, "LogContent", "宋体", 14, false, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
-            StyleManager.AddStyle(app, "LogTitle", "宋体", 16, true, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
+            StyleHelper.AddStyle(app, "LogContent", "宋体", 14, false, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
+            StyleHelper.AddStyle(app, "LogTitle", "宋体", 16, true, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
         }
 
         private void button1_Click(object sender, RibbonControlEventArgs e)
@@ -32,33 +32,18 @@ namespace StoryTools
 
         private void ButtonExportToCSV_Click(object sender, RibbonControlEventArgs e)
         {
-            string CSVDirectory = Configuration.UserConfigSettings.GetConfig().UserLocalizationPath;
-            //string CSVDirectory = @"C:\Users\qi.li\Desktop\";
-
-            if (CSVDirectory == "")
-            {
-                WindowsForm.FolderBrowserDialog dialog = new WindowsForm.FolderBrowserDialog();
-                dialog.Description = "请选择CSV导出路径";
-                if (dialog.ShowDialog() == WindowsForm.DialogResult.OK)
-                {
-                    if (string.IsNullOrEmpty(dialog.SelectedPath))
-                    {
-                        WindowsForm.MessageBox.Show("文件夹路径不能为空", "Error");
-                        return;
-                    }
-                }
-                Configuration.UserConfigSettings.SavePath(dialog.SelectedPath);
-            }
+            string csvPath = ConfigManager.GetUserLocalizationPath();
             string csvName = Path.GetFileNameWithoutExtension(app.ActiveWorkbook.Name);
             string fileType = ".csv";
-            string fullPath = Path.Combine(CSVDirectory, csvName + fileType);
+            string fullPath = Path.Combine(csvPath, csvName + fileType);
             Excel.Worksheet sheet = app.ActiveWorkbook.Worksheets[1];
-            ExcelToCsv.ExportToCsv(sheet.UsedRange, fullPath, sheet.UsedRange.Rows.Count, "key", "zh_cn");
+            ExcelManager.ExportToCsv(sheet.UsedRange, fullPath, sheet.UsedRange.Rows.Count,
+                "id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start");
         }
 
         private void ButtonConfigManager_Click(object sender, RibbonControlEventArgs e)
         {
-
+            WindowsForm.MessageBox.Show(ConfigManager.GetUserLocalizationPath(), "配置路径为");
         }
 
         private void ConfigManagerWindow_HelpRequest(object sender, EventArgs e)

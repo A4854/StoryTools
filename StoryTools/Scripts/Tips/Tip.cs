@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WindowsForm = System.Windows.Forms;
 
 namespace StoryTools.Scripts.Tips
 {
@@ -13,7 +10,7 @@ namespace StoryTools.Scripts.Tips
         Error
     }
 
-    internal class Tip
+    internal class Tip : WindowsForm.CommonDialog
     {
         private string _title;
         private TipType _type;
@@ -28,11 +25,22 @@ namespace StoryTools.Scripts.Tips
 
         public void Show()
         {
+            this.Title = "111111";
         }
 
         public void Close()
         {
             OnTipClosed?.Invoke();
+        }
+
+        public override void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override bool RunDialog(IntPtr hwndOwner)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace StoryTools.Scripts.Tips
 {
@@ -36,8 +32,8 @@ namespace StoryTools.Scripts.Tips
 
         private Tip PopTip()
         {
-            Tip _tip = Tips[Tips.Count-1];
-            Tips.RemoveAt(Tips.Count-1);
+            Tip _tip = Tips[Tips.Count - 1];
+            Tips.RemoveAt(Tips.Count - 1);
             return _tip;
         }
 

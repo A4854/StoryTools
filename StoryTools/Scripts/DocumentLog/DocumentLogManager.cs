@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StoryTools.Scripts.DocumentLog
 {
     internal class DocumentLogManager
     {
-        public delegate void UpdateLogEventHandler();
-        public event UpdateLogEventHandler OnUpdateLogFinish;
 
         private void UpdateLog()
         {
@@ -18,7 +12,6 @@ namespace StoryTools.Scripts.DocumentLog
                 MakeLogSheet();
             }
             //todo
-            OnUpdateLogFinish.Invoke();
             return;
         }
 
@@ -40,7 +33,5 @@ namespace StoryTools.Scripts.DocumentLog
             //todo
             return;
         }
-
-        event EventHandler<EventArgs> UpdateFinished;
     }
 }

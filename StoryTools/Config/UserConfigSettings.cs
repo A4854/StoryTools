@@ -1,9 +1,4 @@
-﻿using System;
-using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace StoryTools.Configuration
 {
@@ -21,26 +16,27 @@ namespace StoryTools.Configuration
             return userConfigSettings;
         }
 
-        public static void SavePath(string value) 
+        public static string SavePath(string value)
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             UserConfigSettings userConfig = config.GetSection("UserConfigSettings") as UserConfigSettings;
             userConfig.UserLocalizationPath = value;
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("UserConfigSettings");
+            return value;
         }
 
         [ConfigurationProperty(UserConfigConstants.UserLocalizationPathKey, IsKey = true, IsRequired = true)]
         public string UserLocalizationPath
         {
-            get 
-            { 
-                return this[UserConfigConstants.UserLocalizationPathKey].ToString(); 
+            get
+            {
+                return this[UserConfigConstants.UserLocalizationPathKey].ToString();
             }
-            set 
-            { 
-                this[UserConfigConstants.UserLocalizationPathKey] = value; 
-           }
+            set
+            {
+                this[UserConfigConstants.UserLocalizationPathKey] = value;
+            }
         }
     }
 

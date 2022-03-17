@@ -33,7 +33,7 @@
     <PublishUrl>C:\Users\qi.li\Desktop\休闲待机动作参考\</PublishUrl>
     <InstallUrl />
     <TargetCulture>zh-chs</TargetCulture>
-    <ApplicationVersion>1.0.0.3</ApplicationVersion>
+    <ApplicationVersion>1.0.0.5</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -186,14 +186,16 @@
   <ItemGroup>
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Config\UserConfigSettings.cs" />
-    <Compile Include="ExcelToCsv.cs" />
-    <Compile Include="Defination.cs" />
-    <Compile Include="RangeManager.cs" />
+    <Compile Include="Scripts\CsvHelper\CsvManger.cs" />
+    <Compile Include="Scripts\ExcelHelper\ExcelManager.cs" />
+    <Compile Include="Scripts\Utils\Defination.cs" />
+    <Compile Include="Scripts\ExcelHelper\RangeManager.cs" />
     <Compile Include="Scripts\DocumentLog\DocumentLogInfo.cs" />
     <Compile Include="Scripts\DocumentLog\DocumentLogManager.cs" />
-    <Compile Include="Scripts\Tips\Tip.cs" />
+    <Compile Include="Scripts\Tips\Tip.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Scripts\Tips\TipsManager.cs" />
-    <Compile Include="StoryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -203,8 +205,7 @@
     <Compile Include="StoryToolsFunctions.Designer.cs">
       <DependentUpon>StoryToolsFunctions.cs</DependentUpon>
     </Compile>
-    <Compile Include="StyleManager.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="Scripts\StyleHelper\StyleManager.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -240,9 +241,7 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\Style\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

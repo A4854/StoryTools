@@ -1,9 +1,5 @@
-﻿using System;
-using System.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
+using WindowsForm = System.Windows.Forms;
 
 namespace StoryTools.Configuration
 {
@@ -19,7 +15,6 @@ namespace StoryTools.Configuration
             }
         }
 
-
         public static class UserConfigManager
         {
             public static UserConfigSettings GetConfig(string sectionName)
@@ -28,5 +23,26 @@ namespace StoryTools.Configuration
                 return ret;
             }
         }
+
+        public static string GetUserLocalizationPath()
+        {
+            string path = UserConfigSettings.GetConfig().UserLocalizationPath;
+
+            if (path == "")
+            {
+                WindowsForm.FolderBrowserDialog dialog = new WindowsForm.FolderBrowserDialog();
+                dialog.Description = "请选择CSV导出路径";
+                if (dialog.ShowDialog() == WindowsForm.DialogResult.OK)
+                {
+                    if (string.IsNullOrEmpty(dialog.SelectedPath))
+                    {
+                        WindowsForm.MessageBox.Show("文件夹路径不能为空", "Error");
+                    }
+                }
+                path = UserConfigSettings.SavePath(dialog.SelectedPath);
+            }
+            return path;
+        }
+
     }
 }
