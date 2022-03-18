@@ -1,4 +1,4 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using Excel = Microsoft.Office.Interop.Excel;
 using StoryTools.Scripts.CsvHelper;
 using StoryTools.Scripts.Utils;
 using System;
@@ -35,7 +35,7 @@ namespace StoryTools.Scripts.ExcelHelper
             return arr;
         }
 
-        public static void ExportToCsv(Range rng, string path, int rowCount, params string[] content)
+        public static void ExportToCsv(Excel.Range rng, string path, int rowCount, params string[] content)
         {
             string[] attrs = ExcelManager.ConvertRowToStringArray(rng.Rows[Defination.AttributeLine].Value2);
             if (attrs.Intersect(content).Count() == 0)
@@ -71,5 +71,40 @@ namespace StoryTools.Scripts.ExcelHelper
             CsvManger.SaveCSV(dataTable, path);
 
         }
+
+        public static Data.DataTable LoadToDataTable(Excel.Application excel)
+        {
+            Excel.Range rng = excel.ActiveWorkbook.ActiveSheet.UsedRange;
+            string[] attrs = ExcelManager.ConvertRowToStringArray(rng.Rows[Defination.AttributeLine].Value2);
+
+            //get colomn indexes
+            int[] colomnArray = new int[rng.Columns.Count];
+
+            //init datatable
+            Data.DataTable dataTable = new Data.DataTable();
+            for (int i = 0; i < colomnArray.Length; i++)
+            {
+                dataTable.Columns.Add("");
+            }
+
+            //fill data to datatable
+            for (int i = 0; i < rng.Rows.Count; i++)
+            {
+                Data.DataRow dataRow = dataTable.NewRow();
+                for (int j = 0; j < colomnArray.Length; j++)
+                {
+                    dataRow[j] = rng[i + 1, colomnArray[j]].Value;
+                }
+                dataTable.Rows.Add(dataRow);
+            }
+            dataTable.Rows.RemoveAt(0);
+            return dataTable;
+        }
+
+        public static void PickUpData(Data.DataTable dataTable, params string[] pickUpContent)
+        {
+            //to do
+        }
+
     }
 }
