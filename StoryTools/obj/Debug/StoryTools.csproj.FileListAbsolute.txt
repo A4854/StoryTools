@@ -26,3 +26,17 @@ D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CoreCompileInput
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CopyComplete
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
 D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb
+C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.config
+C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll
+C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.pdb
+C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.manifest
+C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.vsto
+C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.AssemblyReference.cache
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.Properties.Resources.resources
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.StoryToolsFunctions.resources
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.GenerateResource.cache
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CoreCompileInputs.cache
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CopyComplete
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb

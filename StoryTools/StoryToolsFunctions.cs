@@ -1,23 +1,26 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
-using StoryTools.Scripts.ExcelHelper;
+using StoryTools.Configuration;
+using StoryTools.Scripts.DataHelper;
+using StoryTools.Scripts.DocumentLog;
+using StoryTools.Scripts.Global;
 using StoryTools.Scripts.StyleHelper;
 using System;
-using System.IO;
 using System.Linq;
+using Data = System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using WindowsForm = System.Windows.Forms;
-using StoryTools.Configuration;
-using StoryTools.Scripts.DocumentLog;
+using StoryTools.Scripts.DataHelper;
 
 namespace StoryTools
 {
     public partial class StoryToolsFunctions
     {
         Excel.Application app;
+
         private void OnStoryToolsLoad(object sender, RibbonUIEventArgs e)
         {
             app = Globals.ThisAddIn.Application;
-            app.WorkbookActivate += OnWorkBookActive;
+            app.WorkbookOpen += OnWorkBookActive;
         }
 
         private void OnWorkBookActive(Excel.Workbook Wb)
@@ -29,12 +32,18 @@ namespace StoryTools
         private void ButtonExportToCSV_Click(object sender, RibbonControlEventArgs e)
         {
             string csvPath = ConfigManager.GetUserLocalizationPath();
-            string csvName = Path.GetFileNameWithoutExtension(app.ActiveWorkbook.Name);
-            string fileType = ".csv";
-            string fullPath = Path.Combine(csvPath, csvName + fileType);
+
             Excel.Range rng = app.ActiveWorkbook.ActiveSheet.UsedRange;
-            ExcelManager.ExportToCsv(rng, fullPath, rng.Rows.Count,
-                "id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start");
+
+            var originData = DoExcel.MakeRangeToDataTabel(rng);
+
+            string[] textLiensTitle = new string[] { "name", "fileType", "id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start" };
+            string[] slectionTitle = new string[] { "name", "fileType", "id", "dialog", "dialogtext", "count" };
+            string[] speakerLocalizaiton = new string[] { "speaker", "speakertext" };
+            string[] dialogLocalizaiton = new string[] { "dialog", "dialogtext" };
+
+            DoExcel.SaveStoryCsv(originData, textLiensTitle, csvPath, Defination.FileTypeTextLine);
+            DoExcel.SaveStoryCsv(originData, slectionTitle, csvPath, Defination.FileTypeSelection);
         }
 
         private void ButtonConfigManager_Click(object sender, RibbonControlEventArgs e)
@@ -51,7 +60,7 @@ namespace StoryTools
         {
             if (app.ActiveWorkbook.Worksheets.OfType<Excel.Worksheet>().FirstOrDefault(ws => ws.Name == "log") == null)
             {
-                 DocumentLogManager.MakeLog(app.ActiveWorkbook);
+                DocumentLogManager.MakeLog(app.ActiveWorkbook);
             }
         }
 

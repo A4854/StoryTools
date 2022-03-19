@@ -1,6 +1,6 @@
-﻿using System;
+﻿using StoryTools.Scripts.DataHelper;
+using System;
 using Excel = Microsoft.Office.Interop.Excel;
-using StoryTools.Scripts.ExcelHelper;
 
 namespace StoryTools.Scripts.DocumentLog
 {
@@ -24,10 +24,12 @@ namespace StoryTools.Scripts.DocumentLog
 
         private static void AppendLog(DateTime logDate, string logBlame, string[] logContent = null)
         {
-            DocumentLogInfo documentLogInfo = new DocumentLogInfo();
-            documentLogInfo.LogDate = logDate;
-            documentLogInfo.LogBlame = logBlame;
-            documentLogInfo.LogContent = logContent;
+            DocumentLogInfo documentLogInfo = new DocumentLogInfo
+            {
+                LogDate = logDate,
+                LogBlame = logBlame,
+                LogContent = logContent
+            };
         }
 
         public static void MakeLog(Excel.Workbook workbook)
@@ -38,9 +40,9 @@ namespace StoryTools.Scripts.DocumentLog
             logSheet.Columns.ColumnWidth = 30;
             logSheet.Rows.RowHeight = 18.75;
 
-            RangeManager.InitRange(workbook, logSheet.Range["A1", "C1"], "LogTitle", "日期", "修改人", "修改内容");
-            RangeManager.InitRange(workbook, logSheet.Range["A2", "C2"], "LogContent", DateTime.Today.ToShortDateString(), "黎　奇", "");
-            RangeManager.InitRange(workbook, logSheet.Range["A3", "C10"], "LogContent", null);
+            DoExcel.InitRange(workbook, logSheet.Range["A1", "C1"], "LogTitle", "日期", "修改人", "修改内容");
+            DoExcel.InitRange(workbook, logSheet.Range["A2", "C2"], "LogContent", DateTime.Today.ToShortDateString(), "黎　奇", "");
+            DoExcel.InitRange(workbook, logSheet.Range["A3", "C10"], "LogContent", null);
         }
 
         private static void MakeLogSheet()
