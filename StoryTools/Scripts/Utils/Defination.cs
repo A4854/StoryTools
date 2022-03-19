@@ -1,6 +1,6 @@
 ﻿namespace StoryTools.Scripts.Global
 {
-    public class Defination
+    internal class Defination
     {
         public const int TitleLine = 5;
         public const int AttributeLine = 4;

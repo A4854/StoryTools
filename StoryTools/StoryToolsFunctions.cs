@@ -6,10 +6,8 @@ using StoryTools.Scripts.Global;
 using StoryTools.Scripts.StyleHelper;
 using System;
 using System.Linq;
-using Data = System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using WindowsForm = System.Windows.Forms;
-using StoryTools.Scripts.DataHelper;
 
 namespace StoryTools
 {
@@ -33,7 +31,9 @@ namespace StoryTools
         {
             string csvPath = ConfigManager.GetUserLocalizationPath();
 
+
             Excel.Range rng = app.ActiveWorkbook.ActiveSheet.UsedRange;
+
 
             var originData = DoExcel.MakeRangeToDataTabel(rng);
 
@@ -42,8 +42,9 @@ namespace StoryTools
             string[] speakerLocalizaiton = new string[] { "speaker", "speakertext" };
             string[] dialogLocalizaiton = new string[] { "dialog", "dialogtext" };
 
-            DoExcel.SaveStoryCsv(originData, textLiensTitle, csvPath, Defination.FileTypeTextLine);
             DoExcel.SaveStoryCsv(originData, slectionTitle, csvPath, Defination.FileTypeSelection);
+
+            DoExcel.SaveStoryCsv(originData, textLiensTitle, csvPath, Defination.FileTypeTextLine);
         }
 
         private void ButtonConfigManager_Click(object sender, RibbonControlEventArgs e)

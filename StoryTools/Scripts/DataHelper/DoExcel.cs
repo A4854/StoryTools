@@ -38,11 +38,10 @@ namespace StoryTools.Scripts.DataHelper
             Data.DataTable dataTable = new Data.DataTable();
             for (int i = 0; i < columnName.Length; i++)
             {
-                Data.DataColumn dataColumn = new Data.DataColumn
+                dataTable.Columns.Add(new Data.DataColumn
                 {
                     ColumnName = columnName[i]
-                };
-                dataTable.Columns.Add(dataColumn);
+                });
             }
 
             //fill data to datatable

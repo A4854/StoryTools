@@ -25,7 +25,6 @@ namespace StoryTools.Scripts.DataHelper
         {
             result.Clear();
             result = dataTable.Copy();
-            int offset = 0;
             int count = result.Columns.Count;
             for (int i = 0; i < count; i++)
             {
@@ -42,10 +41,10 @@ namespace StoryTools.Scripts.DataHelper
         {
             Data.DataRow[] ds = from.Select(selection);
             from.Clear();
-            AddRows(from, ds);
+            AddRows(ref from, ds);
         }
 
-        public static void AddRows(Data.DataTable dt, IEnumerable<Data.DataRow> drs)
+        public static void AddRows(ref Data.DataTable dt, IEnumerable<Data.DataRow> drs)
         {
             int count = dt.Columns.Count;
             if (count <= drs.First().ItemArray.Length)
@@ -65,18 +64,13 @@ namespace StoryTools.Scripts.DataHelper
         public static Data.DataTable CreateDateTableWithRows(IEnumerable<Data.DataRow> rows)
         {
             Data.DataTable dt = new Data.DataTable();
-            AddRows(dt, rows);
+            AddRows(ref dt, rows);
             return dt;
         }
 
         public static Data.DataRow[] GetTitleRows(Data.DataTable dt, int titleCount)
         {
-            Data.DataTable temp = dt.Clone();
-            for (int i = 0; i < titleCount; i++)
-            {
-                temp.ImportRow(dt.Rows[i]);
-            }
-            return temp.Rows.Cast<Data.DataRow>().ToArray();
+            return dt.Rows.Cast<Data.DataRow>().TakeWhile(x => dt.Rows.IndexOf(x) < Defination.TitleLine).ToArray();
         }
 
         public static void SaveStoryCsvByRows(IEnumerable<Data.DataRow> title, IEnumerable<Data.DataRow> content, string csvPath)
@@ -88,7 +82,7 @@ namespace StoryTools.Scripts.DataHelper
             table = title.First().Table.Clone();
             IEnumerator<Data.DataRow> enumerator = content.GetEnumerator();
             
-            AddRows(table, title);
+            AddRows(ref table, title);
             string fileName = content.ElementAt(0).ItemArray[fileNameColumn].ToString();
             
             while (enumerator.MoveNext())
@@ -97,10 +91,10 @@ namespace StoryTools.Scripts.DataHelper
                 {
                     table.Columns.RemoveAt(fileNameColumn);
                     table.Columns.RemoveAt(fileTypeColumn - 1);
-                    DoCsv.SaveCSV(table, true, Path.Combine(csvPath, fileName + ".csv"));
+                    DoCsv.SaveCSV(table, Path.Combine(csvPath, fileName + ".csv"));
                     fileName = enumerator.Current.ItemArray[fileNameColumn].ToString();
                     table.Clear();
-                    AddRows(table, title);
+                    AddRows(ref table, title);
                 }
                 table.ImportRow(enumerator.Current);
             }
@@ -108,7 +102,7 @@ namespace StoryTools.Scripts.DataHelper
             table.Columns.RemoveAt(fileNameColumn);
             table.Columns.RemoveAt(fileTypeColumn - 1);
             
-            DoCsv.SaveCSV(table, true, Path.Combine(csvPath, fileName + ".csv"));
+            DoCsv.SaveCSV(table, Path.Combine(csvPath, fileName + ".csv"));
         }
 
     }
