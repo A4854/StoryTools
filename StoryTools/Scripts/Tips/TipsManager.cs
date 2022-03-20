@@ -4,8 +4,8 @@ namespace StoryTools.Scripts.Tips
 {
     internal class TipsManager
     {
-        bool _isShow = false;
-        List<Tip> Tips = new List<Tip>();
+        private bool _isShow = false;
+        private List<Tip> Tips = new List<Tip>();
 
         public void ShowTip(string title, TipType tipType, string description)
         {

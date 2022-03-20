@@ -97,7 +97,7 @@ namespace StoryTools.Scripts.DataHelper
             try
             {
                 Data.DataRow[] drs1 = localizationData.Select($"key LIKE '{selection}%'");
-                
+
                 for (int i = 0; i < drs1.Length; i++)
                 {
                     localizationData.Rows.Remove(drs1[i]);

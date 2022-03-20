@@ -1,11 +1,10 @@
-﻿using System.Configuration;
-using StoryTools.Scripts.Global;
+﻿using System.ComponentModel;
+using System.Configuration;
 using System.IO;
-using System.ComponentModel;
 
 namespace StoryTools.Config
 {
-    public class ConfigManager: INotifyPropertyChanged
+    public class ConfigManager : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -38,7 +37,7 @@ namespace StoryTools.Config
 
         public void SetConfig(string key, string value)
         {
-            config.AppSettings.Settings[key].Value = value ;
+            config.AppSettings.Settings[key].Value = value;
             OnChangeData(key);
         }
 

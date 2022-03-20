@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using StoryTools.Config;
+﻿using StoryTools.Config;
 using StoryTools.Scripts.Global;
+using System;
+using System.Windows.Forms;
 
 namespace StoryTools.Forms
 {
@@ -10,7 +10,7 @@ namespace StoryTools.Forms
         public MainForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -83,5 +83,5 @@ namespace StoryTools.Forms
             LabelCurrentLocalizationPath.Text = ConfigManager.Get().GetConfig(Defination.LocalizationPathKey);
         }
     }
-}  
+}
 

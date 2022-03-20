@@ -1,22 +1,22 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
+using StoryTools.Config;
 using StoryTools.Scripts.DataHelper;
 using StoryTools.Scripts.DocumentLog;
 using StoryTools.Scripts.Global;
 using StoryTools.Scripts.StyleHelper;
 using System;
-using System.Linq;
-using StoryTools.Config;
-using Excel = Microsoft.Office.Interop.Excel;
-using MyForm = StoryTools.Forms;
 using System.Data;
 using System.IO;
+using System.Linq;
+using Excel = Microsoft.Office.Interop.Excel;
+using MyForm = StoryTools.Forms;
 
 
 namespace StoryTools
 {
     public partial class StoryToolsFunctions
     {
-        Excel.Application app;
+        private Excel.Application app;
 
         private void OnStoryToolsLoad(object sender, RibbonUIEventArgs e)
         {
@@ -81,9 +81,9 @@ namespace StoryTools
             DataTable localizationData = DoCsv.LoadCsv(localizationCfgPath);
             localizationData.Columns[0].ColumnName = "key";
             localizationData.Columns[1].ColumnName = "zh_cn";
-            string[] localizationLines = new string[] { "dialog", "dialogtext"};
-            
-            
+            string[] localizationLines = new string[] { "dialog", "dialogtext" };
+
+
             DoExcel.AppendLocalizationCsv(originData, localizationData, localizationLines, localizationCfgPath, fileName);
 
 

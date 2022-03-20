@@ -15,7 +15,7 @@ namespace StoryTools.Scripts.DataHelper
             {
                 if (!pickUpContent.Contains(dataTable.Columns[i].ColumnName))
                 {
-                    dataTable.Columns.RemoveAt(i-offset);
+                    dataTable.Columns.RemoveAt(i - offset);
                     offset++;
                 }
             }
@@ -81,10 +81,10 @@ namespace StoryTools.Scripts.DataHelper
             Data.DataTable table = new Data.DataTable();
             table = title.First().Table.Clone();
             IEnumerator<Data.DataRow> enumerator = content.GetEnumerator();
-            
+
             AddRows(ref table, title);
             string fileName = content.ElementAt(0).ItemArray[fileNameColumn].ToString();
-            
+
             while (enumerator.MoveNext())
             {
                 if (fileName != enumerator.Current.ItemArray[fileNameColumn].ToString())
@@ -101,7 +101,7 @@ namespace StoryTools.Scripts.DataHelper
             table.AcceptChanges();
             table.Columns.RemoveAt(fileNameColumn);
             table.Columns.RemoveAt(fileTypeColumn - 1);
-            
+
             DoCsv.SaveCSV(table, Path.Combine(csvPath, fileName + ".csv"));
         }
 

@@ -3,7 +3,7 @@ using WindowsForm = System.Windows.Forms;
 
 namespace StoryTools.Scripts.Tips
 {
-    enum TipType
+    internal enum TipType
     {
         Normal,
         Alert,
