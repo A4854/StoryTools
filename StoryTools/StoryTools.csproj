@@ -230,6 +230,7 @@
     <None Include="App.Config" />
     <None Include="example\Go.xlsx" />
     <None Include="example\LocalizationNPC.xlsx" />
+    <None Include="example\zaoshen.xlsm" />
     <None Include="example\总表.xlsm" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -251,8 +252,11 @@
     </Compile>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Content Include="Resources\delete.ico" />
+    <Content Include="Resources\icon.ico" />
+    <Content Include="Resources\lang.ico" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

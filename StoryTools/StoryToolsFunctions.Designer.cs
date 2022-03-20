@@ -36,10 +36,11 @@
         {
             this.ExcelTools = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
-            this.ButtonExportToCSV = this.Factory.CreateRibbonButton();
+            this.ButtonExportCSV = this.Factory.CreateRibbonButton();
             this.ButtonCheckRoleName = this.Factory.CreateRibbonButton();
             this.ButtonConfigManager = this.Factory.CreateRibbonButton();
             this.ButtonUpdateLog = this.Factory.CreateRibbonButton();
+            this.ButtonApplendLang = this.Factory.CreateRibbonButton();
             this.ConfigManagerWindow = new System.Windows.Forms.FolderBrowserDialog();
             this.ExcelTools.SuspendLayout();
             this.group1.SuspendLayout();
@@ -54,18 +55,19 @@
             // 
             // group1
             // 
-            this.group1.Items.Add(this.ButtonExportToCSV);
+            this.group1.Items.Add(this.ButtonExportCSV);
             this.group1.Items.Add(this.ButtonCheckRoleName);
             this.group1.Items.Add(this.ButtonConfigManager);
             this.group1.Items.Add(this.ButtonUpdateLog);
+            this.group1.Items.Add(this.ButtonApplendLang);
             this.group1.Label = "StoryTools";
             this.group1.Name = "group1";
             // 
-            // ButtonExportToCSV
+            // ButtonExportCSV
             // 
-            this.ButtonExportToCSV.Label = "ExportToCSV";
-            this.ButtonExportToCSV.Name = "ButtonExportToCSV";
-            this.ButtonExportToCSV.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonExportToCSV_Click);
+            this.ButtonExportCSV.Label = "ExportToCSV";
+            this.ButtonExportCSV.Name = "ButtonExportCSV";
+            this.ButtonExportCSV.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonExportCSV_Click);
             // 
             // ButtonCheckRoleName
             // 
@@ -85,6 +87,12 @@
             this.ButtonUpdateLog.Label = "MakeLog";
             this.ButtonUpdateLog.Name = "ButtonUpdateLog";
             this.ButtonUpdateLog.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.MakeLog_Click);
+            // 
+            // ButtonApplendLang
+            // 
+            this.ButtonApplendLang.Label = "ButtonApplendLang";
+            this.ButtonApplendLang.Name = "ButtonApplendLang";
+            this.ButtonApplendLang.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ButtonApplendLang_Click);
             // 
             // ConfigManagerWindow
             // 
@@ -108,11 +116,12 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab ExcelTools;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonExportToCSV;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonExportCSV;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonCheckRoleName;
         private System.Windows.Forms.FolderBrowserDialog ConfigManagerWindow;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonConfigManager;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonUpdateLog;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ButtonApplendLang;
     }
 
     partial class ThisRibbonCollection

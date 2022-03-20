@@ -105,5 +105,14 @@ namespace StoryTools.Scripts.DataHelper
             DoCsv.SaveCSV(table, Path.Combine(csvPath, fileName + ".csv"));
         }
 
+        public static void SaveLocalizationByRows(Data.DataTable localizationTable, IEnumerable<Data.DataRow> content, string savePath)
+        {
+            IEnumerator<Data.DataRow> enumerator = content.GetEnumerator();
+
+            AddRows(ref localizationTable, content);
+
+            DoCsv.SaveCSV(localizationTable, savePath);
+        }
+
     }
 }

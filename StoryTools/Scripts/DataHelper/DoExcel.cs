@@ -58,7 +58,7 @@ namespace StoryTools.Scripts.DataHelper
             return dataTable;
         }
 
-        public static void SaveStoryCsv(Data.DataTable originData, string[] titles, string csvPath, string slectType)
+        public static void SaveStoryCsv(Data.DataTable originData, string[] titles, string savePath, string selection)
         {
             Data.DataTable dataTable = new Data.DataTable();
 
@@ -68,17 +68,47 @@ namespace StoryTools.Scripts.DataHelper
 
             try
             {
-                Data.DataRow[] dt1 = dataTable.Select($"{Defination.FileTypeTag}=\'{slectType}\'");
+                Data.DataRow[] dt1 = dataTable.Select($"{Defination.FileTypeTag}=\'{selection}\'");
 
                 if (title1.Count() == 0 || dt1.Count() == 0)
                 {
                     return;
                 }
-                DoDataTable.SaveStoryCsvByRows(title1, dt1, csvPath);
+                DoDataTable.SaveStoryCsvByRows(title1, dt1, savePath);
             }
             catch (Data.SyntaxErrorException)
             {
             }
+        }
+
+        public static void AppendLocalizationCsv(Data.DataTable originData, Data.DataTable localizationData, string[] titles, string savePath, string selection)
+        {
+            Data.DataTable dataTable = new Data.DataTable();
+
+            DoDataTable.SeperateDataByColumnsTittle(originData, ref dataTable, titles);
+            //dataTable = localizationData.Clone();
+            dataTable.Columns[0].ColumnName = localizationData.Columns[0].ColumnName;
+            dataTable.Columns[1].ColumnName = localizationData.Columns[1].ColumnName;
+            for (int i = 0; i < Defination.TitleLine; i++)
+            {
+                dataTable.Rows.RemoveAt(0);
+            }
+
+            try
+            {
+                Data.DataRow[] drs1 = localizationData.Select($"key LIKE '{selection}%'");
+                
+                for (int i = 0; i < drs1.Length; i++)
+                {
+                    localizationData.Rows.Remove(drs1[i]);
+                }
+
+                DoDataTable.SaveLocalizationByRows(localizationData, dataTable.Rows.Cast<Data.DataRow>(), savePath);
+            }
+            catch (Data.SyntaxErrorException)
+            {
+            }
+
         }
 
 

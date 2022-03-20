@@ -7,8 +7,9 @@ using System;
 using System.Linq;
 using StoryTools.Config;
 using Excel = Microsoft.Office.Interop.Excel;
-using WindowsForm = System.Windows.Forms;
 using MyForm = StoryTools.Forms;
+using System.Data;
+using System.IO;
 
 
 namespace StoryTools
@@ -29,13 +30,13 @@ namespace StoryTools
             StyleHelper.AddStyle(app, "LogTitle", "宋体", 16, true, Excel.Constants.xlCenter, Excel.Constants.xlCenter);
         }
 
-        private void ButtonExportToCSV_Click(object sender, RibbonControlEventArgs e)
+        private void ButtonExportCSV_Click(object sender, RibbonControlEventArgs e)
         {
-            string csvPath = ConfigManager.Get().GetCsvPath();
+            string csvPath = ConfigManager.Get().GetConfig(Defination.CsvPathKey);
 
             Excel.Range rng = app.ActiveWorkbook.ActiveSheet.UsedRange;
 
-            var originData = DoExcel.MakeRangeToDataTabel(rng);
+            DataTable originData = DoExcel.MakeRangeToDataTabel(rng);
 
             string[] textLiensTitle = new string[] { "name", "fileType", "id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start" };
             string[] slectionTitle = new string[] { "name", "fileType", "id", "dialog", "dialogtext", "count" };
@@ -50,8 +51,6 @@ namespace StoryTools
         {
             MyForm.MainForm mainForm = new MyForm.MainForm();
             mainForm.Show();
-
-            //WindowsForm.MessageBox.Show(ConfigManager.GetCsvPath(), "配置路径为");
         }
 
         private void ConfigManagerWindow_HelpRequest(object sender, EventArgs e)
@@ -69,6 +68,24 @@ namespace StoryTools
 
         private void CheckRoleName_Click(object sender, RibbonControlEventArgs e)
         {
+
+        }
+
+        private void ButtonApplendLang_Click(object sender, RibbonControlEventArgs e)
+        {
+            string localizationCfgPath = ConfigManager.Get().GetConfig(Defination.LocalizationPathKey);
+
+            string fileName = Path.GetFileNameWithoutExtension(app.ActiveWorkbook.Name);
+
+            DataTable originData = DoExcel.MakeRangeToDataTabel(app.ActiveWorkbook.ActiveSheet.UsedRange);
+            DataTable localizationData = DoCsv.LoadCsv(localizationCfgPath);
+            localizationData.Columns[0].ColumnName = "key";
+            localizationData.Columns[1].ColumnName = "zh_cn";
+            string[] localizationLines = new string[] { "dialog", "dialogtext"};
+            
+            
+            DoExcel.AppendLocalizationCsv(originData, localizationData, localizationLines, localizationCfgPath, fileName);
+
 
         }
     }
