@@ -1,13 +1,15 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
-using StoryTools.Configuration;
 using StoryTools.Scripts.DataHelper;
 using StoryTools.Scripts.DocumentLog;
 using StoryTools.Scripts.Global;
 using StoryTools.Scripts.StyleHelper;
 using System;
 using System.Linq;
+using StoryTools.Config;
 using Excel = Microsoft.Office.Interop.Excel;
 using WindowsForm = System.Windows.Forms;
+using MyForm = StoryTools.Forms;
+
 
 namespace StoryTools
 {
@@ -29,11 +31,9 @@ namespace StoryTools
 
         private void ButtonExportToCSV_Click(object sender, RibbonControlEventArgs e)
         {
-            string csvPath = ConfigManager.GetUserLocalizationPath();
-
+            string csvPath = ConfigManager.Get().GetCsvPath();
 
             Excel.Range rng = app.ActiveWorkbook.ActiveSheet.UsedRange;
-
 
             var originData = DoExcel.MakeRangeToDataTabel(rng);
 
@@ -43,13 +43,15 @@ namespace StoryTools
             string[] dialogLocalizaiton = new string[] { "dialog", "dialogtext" };
 
             DoExcel.SaveStoryCsv(originData, slectionTitle, csvPath, Defination.FileTypeSelection);
-
             DoExcel.SaveStoryCsv(originData, textLiensTitle, csvPath, Defination.FileTypeTextLine);
         }
 
         private void ButtonConfigManager_Click(object sender, RibbonControlEventArgs e)
         {
-            WindowsForm.MessageBox.Show(ConfigManager.GetUserLocalizationPath(), "配置路径为");
+            MyForm.MainForm mainForm = new MyForm.MainForm();
+            mainForm.Show();
+
+            //WindowsForm.MessageBox.Show(ConfigManager.GetCsvPath(), "配置路径为");
         }
 
         private void ConfigManagerWindow_HelpRequest(object sender, EventArgs e)

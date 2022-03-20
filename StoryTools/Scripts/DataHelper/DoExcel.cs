@@ -62,7 +62,7 @@ namespace StoryTools.Scripts.DataHelper
         {
             Data.DataTable dataTable = new Data.DataTable();
 
-            DoDataTable.CopyColumnsToEmpty(originData, ref dataTable, titles);
+            DoDataTable.SeperateDataByColumnsTittle(originData, ref dataTable, titles);
 
             Data.DataRow[] title1 = DoDataTable.GetTitleRows(dataTable, Defination.TitleLine);
 

@@ -33,6 +33,7 @@ C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.dll.manifest
 C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\StoryTools.vsto
 C:\Users\12287\Project\StoryTools\StoryTools\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.AssemblyReference.cache
+C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.Forms.MainForm.resources
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.Properties.Resources.resources
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.StoryToolsFunctions.resources
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.GenerateResource.cache

@@ -21,7 +21,7 @@ namespace StoryTools.Scripts.DataHelper
             }
         }
 
-        public static void CopyColumnsToEmpty(Data.DataTable dataTable, ref Data.DataTable result, params string[] pickUpContent)
+        public static void SeperateDataByColumnsTittle(Data.DataTable dataTable, ref Data.DataTable result, params string[] pickUpContent)
         {
             result.Clear();
             result = dataTable.Copy();

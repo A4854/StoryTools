@@ -1,11 +1,32 @@
 ﻿using System.Configuration;
 using WindowsForm = System.Windows.Forms;
+using System.IO;
+using System.ComponentModel;
 
-namespace StoryTools.Configuration
+namespace StoryTools.Config
 {
-    public static class ConfigManager
+    public class ConfigManager: INotifyPropertyChanged
     {
-        public static class AppConfigManager
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private static ConfigManager instance;
+        private static Configuration config;
+
+        public ConfigManager()
+        {
+            config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+        }
+
+        public static ConfigManager Get()
+        {
+            if (instance == null)
+            {
+                instance = new ConfigManager();
+            }
+            return instance;
+        }
+
+        public class AppConfigManager
         {
             public static string GerDefaultLocalizationPath()
             {
@@ -15,33 +36,33 @@ namespace StoryTools.Configuration
             }
         }
 
-        public static class UserConfigManager
+        public string GetConfig(string key)
         {
-            public static UserConfigSettings GetConfig(string sectionName)
-            {
-                UserConfigSettings ret = ConfigurationManager.GetSection(sectionName) as UserConfigSettings;
-                return ret;
-            }
+            return config.AppSettings.Settings[key].Value;
         }
 
-        public static string GetUserLocalizationPath()
+        public void SetConfig(string key, string value)
         {
-            string path = UserConfigSettings.GetConfig().UserLocalizationPath;
+            config.AppSettings.Settings[key].Value = value ;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSetting");
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(key));
+        }
 
-            if (path == "")
+        public string GetCsvPath()
+        {
+            string path = GetConfig("CsvPath");
+            if (path == "LoacalPath" || path == "")
             {
-                WindowsForm.FolderBrowserDialog dialog = new WindowsForm.FolderBrowserDialog();
-                dialog.Description = "请选择CSV导出路径";
-                if (dialog.ShowDialog() == WindowsForm.DialogResult.OK)
-                {
-                    if (string.IsNullOrEmpty(dialog.SelectedPath))
-                    {
-                        WindowsForm.MessageBox.Show("文件夹路径不能为空", "Error");
-                    }
-                }
-                path = UserConfigSettings.SavePath(dialog.SelectedPath);
+                path = Path.GetDirectoryName(Globals.ThisAddIn.Application.ActiveWorkbook.FullName);
             }
             return path;
+        }
+
+
+        public void SetCsvPath(string path)
+        {
+            SetConfig("CsvPath", path);
         }
 
     }
