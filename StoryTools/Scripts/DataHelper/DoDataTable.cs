@@ -78,12 +78,11 @@ namespace StoryTools.Scripts.DataHelper
             int fileNameColumn = title.ElementAt(Defination.AttributeLine - 1).ItemArray.TakeWhile(x => x.ToString() != Defination.FileNameTag).Count();
             int fileTypeColumn = title.ElementAt(Defination.AttributeLine - 1).ItemArray.TakeWhile(x => x.ToString() != Defination.FileTypeTag).Count();
 
+            IEnumerator<Data.DataRow> enumerator = content.GetEnumerator();
+            string fileName = content.ElementAt(0).ItemArray[fileNameColumn].ToString();
             Data.DataTable table = new Data.DataTable();
             table = title.First().Table.Clone();
-            IEnumerator<Data.DataRow> enumerator = content.GetEnumerator();
-
             AddRows(ref table, title);
-            string fileName = content.ElementAt(0).ItemArray[fileNameColumn].ToString();
 
             while (enumerator.MoveNext())
             {
@@ -92,8 +91,9 @@ namespace StoryTools.Scripts.DataHelper
                     table.Columns.RemoveAt(fileNameColumn);
                     table.Columns.RemoveAt(fileTypeColumn - 1);
                     DoCsv.SaveCSV(table, Path.Combine(csvPath, fileName + ".csv"));
+                    table = new Data.DataTable();
+                    table = title.First().Table.Clone();
                     fileName = enumerator.Current.ItemArray[fileNameColumn].ToString();
-                    table.Clear();
                     AddRows(ref table, title);
                 }
                 table.ImportRow(enumerator.Current);
@@ -101,7 +101,6 @@ namespace StoryTools.Scripts.DataHelper
             table.AcceptChanges();
             table.Columns.RemoveAt(fileNameColumn);
             table.Columns.RemoveAt(fileTypeColumn - 1);
-
             DoCsv.SaveCSV(table, Path.Combine(csvPath, fileName + ".csv"));
         }
 

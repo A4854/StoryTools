@@ -100,7 +100,10 @@ namespace StoryTools.Scripts.DataHelper
 
                 for (int i = 0; i < drs1.Length; i++)
                 {
-                    localizationData.Rows.Remove(drs1[i]);
+                    if(drs1[i][0].ToString().Substring(selection.Length, 1) == "_")
+                    {
+                        localizationData.Rows.Remove(drs1[i]);
+                    }
                 }
 
                 DoDataTable.SaveLocalizationByRows(localizationData, dataTable.Rows.Cast<Data.DataRow>(), savePath);

@@ -41,3 +41,4 @@ C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CoreCom
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.csproj.CopyComplete
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.dll
 C:\Users\12287\Project\StoryTools\StoryTools\obj\Debug\StoryTools.pdb
+D:\my_project\StoryTools\StoryTools\obj\Debug\StoryTools.Forms.MainForm.resources

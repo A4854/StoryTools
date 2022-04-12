@@ -18,14 +18,26 @@ namespace StoryTools.Scripts.DataHelper
             {
                 foreach (DataRow row in dt.Rows)
                 {
+                    bool jump = false;
                     bool comma = false;
                     for (int c = 0; c < columns; c++)
                     {
-                        if (!comma) comma = true;
-                        else writer.Write(',');
+                        if (!comma)
+                        {
+                            comma = true;
+                        }
+                        else
+                        {
+                            writer.Write(',');
+                        }
 
                         string go = row[c].ToString();
-                        char HEAD;
+                        if (c == 0 && string.IsNullOrEmpty(go))
+                        {
+                            jump = true;
+                            break;
+                        }
+                        char HEAD = ' ';
                         string _HEAD = "";
                         for (int i = 0; i < go.Length; i++)
                         {
@@ -40,9 +52,16 @@ namespace StoryTools.Scripts.DataHelper
                         {
                             _HEAD = "\"" + _HEAD + "\"";
                         }
-                        writer.Write(_HEAD.ToString());
+                        if (_HEAD != "")
+                        {
+                            writer.Write(_HEAD.ToString());
+                        }
                     }
-                    writer.WriteLine();
+                    if (!jump)
+                    {
+                        writer.WriteLine();
+                    }
+                    
                 }
             }
         }
@@ -123,7 +142,7 @@ namespace StoryTools.Scripts.DataHelper
                                 isFirstChar = false;
                             }
                         }
-                        else if (!char.IsWhiteSpace(HEAD))
+                        else
                         {
                             lastIsQuote = false;
                             _HEAD += HEAD.ToString();
