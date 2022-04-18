@@ -96,8 +96,7 @@ namespace StoryTools.Scripts.DataHelper
                     for (int i = 0; i < line.Length; i++)
                     {
                         HEAD = line[i];
-
-                        if (HEAD == ',' | i == line.Length)
+                        if (i == line.Length)
                         {
                             lastIsQuote = false;
                             if (quote % 2 == 0 || i == line.Length)
@@ -122,31 +121,56 @@ namespace StoryTools.Scripts.DataHelper
                                 isFirstChar = false;
                             }
                         }
-                        else if (HEAD == '\"')
+                        switch (HEAD)
                         {
-                            quote++;
-                            if (!isFirstChar)
-                            {
-                                if (lastIsQuote)
+                            case ',':
+                                lastIsQuote = false;
+                                if (quote % 2 == 0 || i == line.Length)
                                 {
-                                    _HEAD += HEAD.ToString();
-                                    lastIsQuote = false;
+                                    if (i == line.Length)
+                                    {
+                                        _HEAD += HEAD.ToString();
+                                    }
+                                    if (isFirstLine && _HEAD == "")
+                                    {
+                                        continue;
+                                    }
+                                    ls.Add(_HEAD);
+
+                                    _HEAD = "";
+                                    quote = 0;
+                                    isFirstChar = true;
                                 }
                                 else
                                 {
-                                    lastIsQuote = true;
+                                    _HEAD += HEAD.ToString();
+                                    isFirstChar = false;
                                 }
-                            }
-                            if (isFirstChar)
-                            {
+                                break;
+                            case '\"':
+                                quote++;
+                                if (!isFirstChar)
+                                {
+                                    if (lastIsQuote)
+                                    {
+                                        _HEAD += HEAD.ToString();
+                                        lastIsQuote = false;
+                                    }
+                                    else
+                                    {
+                                        lastIsQuote = true;
+                                    }
+                                }
+                                if (isFirstChar)
+                                {
+                                    isFirstChar = false;
+                                }
+                                break;
+                            default:
+                                lastIsQuote = false;
+                                _HEAD += HEAD.ToString();
                                 isFirstChar = false;
-                            }
-                        }
-                        else
-                        {
-                            lastIsQuote = false;
-                            _HEAD += HEAD.ToString();
-                            isFirstChar = false;
+                                break;
                         }
                     }
                     if (_HEAD != "")

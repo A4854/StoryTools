@@ -58,6 +58,12 @@ namespace StoryTools.Scripts.DataHelper
             return dataTable;
         }
 
+        public static Data.DataTable[] LoadExcelToDataTabel(Excel.Application app, string excelPath)
+        {
+            Excel.Workbook wb = app.Workbooks.Open(excelPath);
+            return null;
+        }
+
         public static void SaveStoryCsv(Data.DataTable originData, string[] titles, string savePath, string selection)
         {
             Data.DataTable dataTable = new Data.DataTable();

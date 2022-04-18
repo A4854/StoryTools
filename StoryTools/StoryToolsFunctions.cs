@@ -83,10 +83,7 @@ namespace StoryTools
             localizationData.Columns[1].ColumnName = "zh_cn";
             string[] localizationLines = new string[] { "dialog", "dialogtext" };
 
-
             DoExcel.AppendLocalizationCsv(originData, localizationData, localizationLines, localizationCfgPath, fileName);
-
-
         }
     }
 }
