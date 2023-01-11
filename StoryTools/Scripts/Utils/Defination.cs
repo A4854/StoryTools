@@ -10,6 +10,7 @@
         public const string FileTypeSelection = "selection";
         public const string FileTypeTextLine = "textline";
         public const string LocalizationPathKey = "LocalizationPath";
+        public const string UserName = "UserName";
         public const string CsvPathKey = "CsvPath";
         public const string LocalizationKeyName = "key";
         public const string LocalizationValueName = "zh_cn";

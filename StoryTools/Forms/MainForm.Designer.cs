@@ -50,8 +50,17 @@ namespace StoryTools.Forms
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.LabelCurrentLocalizationPath = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.LabelUserName = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.ButtonSetUserName = new System.Windows.Forms.ToolStripButton();
+            this.ButtonResetUserName = new System.Windows.Forms.ToolStripButton();
+            this.TextBoxCurrentUserName = new System.Windows.Forms.ToolStripTextBox();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.toolStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -194,21 +203,88 @@ namespace StoryTools.Forms
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             this.toolStripSeparator8.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStrip3
+            // 
+            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ButtonSetUserName,
+            this.toolStripSeparator9,
+            this.ButtonResetUserName,
+            this.toolStripSeparator10,
+            this.LabelUserName,
+            this.toolStripSeparator11,
+            this.TextBoxCurrentUserName});
+            this.toolStrip3.Location = new System.Drawing.Point(0, 50);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip3.TabIndex = 2;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
+            // 
+            // LabelUserName
+            // 
+            this.LabelUserName.Name = "LabelUserName";
+            this.LabelUserName.Size = new System.Drawing.Size(80, 22);
+            this.LabelUserName.Text = "当前用户名称";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ButtonSetUserName
+            // 
+            this.ButtonSetUserName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ButtonSetUserName.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSetUserName.Image")));
+            this.ButtonSetUserName.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ButtonSetUserName.Name = "ButtonSetUserName";
+            this.ButtonSetUserName.Size = new System.Drawing.Size(23, 22);
+            this.ButtonSetUserName.Text = "toolStripButton1";
+            this.ButtonSetUserName.Click += new System.EventHandler(this.ButtonSetUserName_Click);
+            // 
+            // ButtonResetUserName
+            // 
+            this.ButtonResetUserName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ButtonResetUserName.Image = ((System.Drawing.Image)(resources.GetObject("ButtonResetUserName.Image")));
+            this.ButtonResetUserName.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ButtonResetUserName.Name = "ButtonResetUserName";
+            this.ButtonResetUserName.Size = new System.Drawing.Size(23, 22);
+            this.ButtonResetUserName.Text = "toolStripButton2";
+            this.ButtonResetUserName.Click += new System.EventHandler(this.ButtonResetUserName_Click);
+            // 
+            // TextBoxCurrentUserName
+            // 
+            this.TextBoxCurrentUserName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.TextBoxCurrentUserName.Name = "TextBoxCurrentUserName";
+            this.TextBoxCurrentUserName.Size = new System.Drawing.Size(100, 25);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStrip3);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.toolStrip3.ResumeLayout(false);
+            this.toolStrip3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,5 +317,13 @@ namespace StoryTools.Forms
         private System.Windows.Forms.ToolStripLabel LabelCurrentLocalizationPath;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStrip toolStrip3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripLabel LabelUserName;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripButton ButtonSetUserName;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton ButtonResetUserName;
+        private System.Windows.Forms.ToolStripTextBox TextBoxCurrentUserName;
     }
 }

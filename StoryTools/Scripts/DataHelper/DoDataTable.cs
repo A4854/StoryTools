@@ -113,5 +113,45 @@ namespace StoryTools.Scripts.DataHelper
             DoCsv.SaveCSV(localizationTable, savePath);
         }
 
+        public static bool CheckTitleValidation(Data.DataTable originData, Data.DataTable targetData)
+        {
+            bool validation = false;
+            return validation;
+;
+        }
+
+        //public static Data.DataTable AppendDataTable(Data.DataTable originData, Data.DataTable targetData)
+        //{
+        //    Data.DataTable dataTable = new Data.DataTable();
+
+        //    DoDataTable.SeperateDataByColumnsTittle(originData, ref dataTable, titles);
+        //    //dataTable = localizationData.Clone();
+        //    dataTable.Columns[0].ColumnName = targetData.Columns[0].ColumnName;
+        //    dataTable.Columns[1].ColumnName = targetData.Columns[1].ColumnName;
+        //    for (int i = 0; i < Defination.TitleLine; i++)
+        //    {
+        //        dataTable.Rows.RemoveAt(0);
+        //    }
+
+        //    try
+        //    {
+        //        Data.DataRow[] drs1 = targetData.Select($"key LIKE '{selection}%'");
+
+        //        for (int i = 0; i < drs1.Length; i++)
+        //        {
+        //            if (drs1[i][0].ToString().Substring(selection.Length, 1) == "_")
+        //            {
+        //                targetData.Rows.Remove(drs1[i]);
+        //            }
+        //        }
+
+        //        DoDataTable.SaveLocalizationByRows(targetData, dataTable.Rows.Cast<Data.DataRow>(), savePath);
+        //    }
+        //    catch (Data.SyntaxErrorException)
+        //    {
+        //    }
+
+        //}
+
     }
 }

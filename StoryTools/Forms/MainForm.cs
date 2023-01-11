@@ -82,6 +82,21 @@ namespace StoryTools.Forms
         {
             LabelCurrentLocalizationPath.Text = ConfigManager.Get().GetConfig(Defination.LocalizationPathKey);
         }
+
+        private void ButtonSetUserName_Click(object sender, EventArgs e)
+        {
+            ConfigManager.Get().SetConfig(Defination.UserName, TextBoxCurrentUserName.Text);
+        }
+
+        private void ButtonResetUserName_Click(object sender, EventArgs e)
+        {
+            ConfigManager.Get().SetConfig(Defination.UserName, "");
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            TextBoxCurrentUserName.Text = ConfigManager.Get().GetConfig(Defination.UserName);
+        }
     }
 }
 

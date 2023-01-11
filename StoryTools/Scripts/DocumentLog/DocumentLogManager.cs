@@ -1,6 +1,7 @@
 ﻿using StoryTools.Scripts.DataHelper;
 using System;
 using Excel = Microsoft.Office.Interop.Excel;
+using StoryTools.Scripts.Global;
 
 namespace StoryTools.Scripts.DocumentLog
 {
@@ -34,6 +35,7 @@ namespace StoryTools.Scripts.DocumentLog
 
         public static void MakeLog(Excel.Workbook workbook)
         {
+            var currentUser = Config.ConfigManager.Get().GetConfig(Defination.UserName);
             var logSheet = workbook.Worksheets.Add() as Excel._Worksheet;
             logSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
             logSheet.Name = "log";
@@ -41,7 +43,7 @@ namespace StoryTools.Scripts.DocumentLog
             logSheet.Rows.RowHeight = 18.75;
 
             DoExcel.InitRange(workbook, logSheet.Range["A1", "C1"], "LogTitle", "日期", "修改人", "修改内容");
-            DoExcel.InitRange(workbook, logSheet.Range["A2", "C2"], "LogContent", DateTime.Today.ToShortDateString(), "黎　奇", "");
+            DoExcel.InitRange(workbook, logSheet.Range["A2", "C2"], "LogContent", DateTime.Today.ToShortDateString(), currentUser, "");
             DoExcel.InitRange(workbook, logSheet.Range["A3", "C10"], "LogContent", null);
         }
 

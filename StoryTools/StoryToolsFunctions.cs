@@ -38,8 +38,8 @@ namespace StoryTools
 
             DataTable originData = DoExcel.MakeRangeToDataTabel(rng);
 
-            string[] textLiensTitle = new string[] { "name", "fileType", "id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start" };
-            string[] slectionTitle = new string[] { "name", "fileType", "id", "dialog", "dialogtext", "count" };
+            string[] textLiensTitle = new string[] { "name", "fileType", "id", "speaker_id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start" };
+            string[] slectionTitle = new string[] { "name", "fileType", "id", "dialog", "dialogtext", "count"};
             string[] speakerLocalizaiton = new string[] { "speaker", "speakertext" };
             string[] dialogLocalizaiton = new string[] { "dialog", "dialogtext" };
 
