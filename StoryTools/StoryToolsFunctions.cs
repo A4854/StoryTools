@@ -40,6 +40,11 @@ namespace StoryTools
 
             string[] textLiensTitle = new string[] { "name", "fileType", "id", "speaker_id", "speaker", "speakertext", "dialog", "dialogtext", "speed", "protecttime", "anime", "start" };
             string[] slectionTitle = new string[] { "name", "fileType", "id", "dialog", "dialogtext", "count"};
+            string[] fullTitle = textLiensTitle.Union(slectionTitle) as string[];
+
+            string[] userTitle = new string[] { "page", "fileType", "speaker_id", "dialogtext" };
+            DoExcel.FixData(originData, userTitle, fullTitle);
+
             string[] speakerLocalizaiton = new string[] { "speaker", "speakertext" };
             string[] dialogLocalizaiton = new string[] { "dialog", "dialogtext" };
 
@@ -85,5 +90,11 @@ namespace StoryTools
 
             DoExcel.AppendLocalizationCsv(originData, localizationData, localizationLines, localizationCfgPath, fileName);
         }
+
+        private void ButtonAutoFixContent_Click(object sender, RibbonControlEventArgs e)
+        {
+            DataTable originData = DoExcel.MakeRangeToDataTabel(app.ActiveWorkbook.ActiveSheet.UsedRange);
+        }
+
     }
 }

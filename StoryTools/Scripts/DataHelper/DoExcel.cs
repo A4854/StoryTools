@@ -120,6 +120,14 @@ namespace StoryTools.Scripts.DataHelper
 
         }
 
+        public static Data.DataTable FixData(Data.DataTable originData, string[] userTitles, string[] fullTitles)
+        {
+            Data.DataTable dataTable = new Data.DataTable();
+
+            DoDataTable.SeperateDataByColumnsTittle(originData, ref dataTable, userTitles);
+            Data.DataRow[] title1 = DoDataTable.GetTitleRows(dataTable, Defination.TitleLine);
+            return originData;
+        }
 
     }
 }

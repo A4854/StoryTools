@@ -83,7 +83,8 @@ namespace StoryTools.Scripts.DataHelper
             Data.DataTable table = new Data.DataTable();
             table = title.First().Table.Clone();
             AddRows(ref table, title);
-
+            string _key = "";
+            int _idnex = 0;
             while (enumerator.MoveNext())
             {
                 if (fileName != enumerator.Current.ItemArray[fileNameColumn].ToString())
@@ -96,6 +97,22 @@ namespace StoryTools.Scripts.DataHelper
                     fileName = enumerator.Current.ItemArray[fileNameColumn].ToString();
                     AddRows(ref table, title);
                 }
+                if(enumerator.Current.ItemArray.Length == 12)
+                {
+                    enumerator.Current["speed"] = 30;
+                    enumerator.Current["protecttime"] = 0;
+                    enumerator.Current["start"] = 0;
+                }
+                if (enumerator.Current.ItemArray.Length == 6)
+                {
+                    enumerator.Current["count"] = 0;
+                }
+                if (_key != enumerator.Current.ItemArray[fileNameColumn].ToString())
+                {
+                    _idnex = 1;
+                }
+                enumerator.Current["id"] = _idnex++;
+                _key = enumerator.Current.ItemArray[fileNameColumn].ToString();
                 table.ImportRow(enumerator.Current);
             }
             table.AcceptChanges();
